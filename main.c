@@ -110,7 +110,6 @@ int main(void)
 #ifndef  SUPPORT_SEGGER
     /* \x1b[2J\x1b[;H - ANSI ESC sequence for clear screen. */
     printf("\x1b[2J\x1b[;H");
-
     printf("********************************************************\n"
            "CE230270 MFG task \n"
            "********************************************************\n");
@@ -119,7 +118,6 @@ int main(void)
     SEGGER_RTT_printf(0, "MFG task \n");
 #endif
     /* Create the tasks. */
-    //xTaskCreate(scan_task, "Scan task", SCAN_TASK_STACK_SIZE, NULL, SCAN_TASK_PRIORITY, &scan_task_handle);
     xTaskCreate(mfg_task, "MFG task", MFG_TASK_STACK_SIZE, NULL, MFG_TASK_PRIORITY, &mfg_task_handle);
 
     /* Start the FreeRTOS scheduler. */
