@@ -95,24 +95,16 @@ int main(void)
 
 #endif
 
-#if 1
     /* Initialize retarget-io to use the debug UART port. */
     result = cy_retarget_io_init(CYBSP_DEBUG_UART_TX, CYBSP_DEBUG_UART_RX, CY_RETARGET_IO_BAUDRATE);
     CY_ASSERT(result == NULL);
 
-#ifdef SUPPORT_BT_TEST
-    //Init BT UART
-    mfg_tran_init();
-#endif
-
-#endif
-
 #ifndef  SUPPORT_SEGGER
     /* \x1b[2J\x1b[;H - ANSI ESC sequence for clear screen. */
     printf("\x1b[2J\x1b[;H");
-    printf("********************************************************\n"
-           "CE230270 MFG task \n"
-           "********************************************************\n");
+    printf("============================================================\n");
+    printf("              MTB TEST MFG ( WIFI / BLUETOOTH )\n");
+    printf("============================================================\n\n");
 #else
     SEGGER_RTT_printf(0, "\x1b[2J\x1b[;H");
     SEGGER_RTT_printf(0, "MFG task \n");

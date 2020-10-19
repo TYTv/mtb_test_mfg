@@ -19,7 +19,7 @@
 #include <stdarg.h>
 
 //#define SUPPORT_SEGGER                         TRUE
-#define SUPPORT_BT_TEST                        TRUE
+//#define SUPPORT_BT_TEST                        TRUE
 
 #ifdef SUPPORT_SEGGER
 #include "SEGGER_RTT.h"

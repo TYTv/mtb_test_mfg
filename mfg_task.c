@@ -89,8 +89,13 @@ void mfg_task(void *arg)
     SEGGER_RTT_printf(0, "MFG task start \n");
 #endif
 
+#ifdef SUPPORT_BT_TEST
+    //Init BT UART
+    mfg_tran_init();
+#else
     result = cy_wcm_init(&wcm_config);
     CY_ASSERT(result == NULL);
+#endif
 
 #if 0
     /* Disable WIFI sleeping */
