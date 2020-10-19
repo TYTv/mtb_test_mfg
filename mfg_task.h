@@ -19,7 +19,6 @@
 #include <stdarg.h>
 
 //#define SUPPORT_SEGGER                         TRUE
-//#define SUPPORT_BT_TEST                        TRUE
 
 #ifdef SUPPORT_SEGGER
 #include "SEGGER_RTT.h"
@@ -421,6 +420,12 @@ int wl_ioctl( int cmd, void *buf, int len, bool set, int *out_len);
 #endif
 
 extern TaskHandle_t mfg_task_handle;
+extern bool SUPPORT_MFG_TEST;
+enum
+{
+	MFG_BT_TEST,
+	MFG_WIFI_TEST
+};
 
 /*
  *  Function prototype

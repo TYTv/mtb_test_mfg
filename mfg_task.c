@@ -44,6 +44,7 @@
  * Global Variables
  ******************************************************************************/
 TaskHandle_t mfg_task_handle;
+bool SUPPORT_MFG_TEST;
 
 static rem_ioctl_t rem_cdc;
 char g_rem_ifname[32] = "wl";
@@ -89,13 +90,13 @@ void mfg_task(void *arg)
     SEGGER_RTT_printf(0, "MFG task start \n");
 #endif
 
-#ifdef SUPPORT_BT_TEST
+if( SUPPORT_MFG_TEST == MFG_BT_TEST ){
     //Init BT UART
     mfg_tran_init();
-#else
+}else{
     result = cy_wcm_init(&wcm_config);
     CY_ASSERT(result == NULL);
-#endif
+}
 
 #if 0
     /* Disable WIFI sleeping */
@@ -111,24 +112,28 @@ void mfg_task(void *arg)
 
     while (true)
     {
-#ifndef SUPPORT_BT_TEST
-        memset(buf, 0, sizeof(buf));
-        wl_remote_command_handler( buf);
-#else
-        uint8_t in_byte;
+    	if( SUPPORT_MFG_TEST == MFG_BT_TEST ){
 
-        if(mfg_retarget_io_readable())
-        {
-        	in_byte = mfg_retarget_io_getchar();
-        	mfg_bt_putchar(in_byte);
-        }
+    		uint8_t in_byte;
 
-        if(mfg_bt_readable())
-        {
-        	in_byte = mfg_bt_getchar();
-        	mfg_retarget_io_putchar(in_byte);
-        }
-#endif
+			if(mfg_retarget_io_readable())
+			{
+				in_byte = mfg_retarget_io_getchar();
+				mfg_bt_putchar(in_byte);
+			}
+
+			if(mfg_bt_readable())
+			{
+				in_byte = mfg_bt_getchar();
+				mfg_retarget_io_putchar(in_byte);
+			}
+
+    	}else{
+
+    		memset(buf, 0, sizeof(buf));
+			wl_remote_command_handler( buf);
+
+		}
     } /* end of while(true) */
 
 //    return result;

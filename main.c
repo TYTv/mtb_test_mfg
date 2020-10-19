@@ -99,12 +99,23 @@ int main(void)
     result = cy_retarget_io_init(CYBSP_DEBUG_UART_TX, CYBSP_DEBUG_UART_RX, CY_RETARGET_IO_BAUDRATE);
     CY_ASSERT(result == NULL);
 
+    SUPPORT_MFG_TEST = cyhal_gpio_read(CYBSP_USER_BTN1);		// P0_4
+
 #ifndef  SUPPORT_SEGGER
     /* \x1b[2J\x1b[;H - ANSI ESC sequence for clear screen. */
     printf("\x1b[2J\x1b[;H");
-    printf("============================================================\n");
-    printf("              MTB TEST MFG ( WIFI / BLUETOOTH )\n");
-    printf("============================================================\n\n");
+    if( SUPPORT_MFG_TEST == MFG_WIFI_TEST ){
+        printf("============================================================\n");
+    	printf("              MTB TEST MFG ( WIFI )\n");
+        printf("============================================================\n");
+        printf("Please press USER_BTN1(P0_4) and reset the development board to change to bluetooth mode.\n\n");
+    }else{
+        printf("============================================================\n");
+    	printf("              MTB TEST MFG ( BLUETOOTH )\n");
+        printf("============================================================\n");
+        printf("Please reset the development board to change to wifi mode.\n\n");
+    }
+
 #else
     SEGGER_RTT_printf(0, "\x1b[2J\x1b[;H");
     SEGGER_RTT_printf(0, "MFG task \n");

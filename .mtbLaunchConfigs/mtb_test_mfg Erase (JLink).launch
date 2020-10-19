@@ -27,7 +27,7 @@
 <stringAttribute key="ilg.gnumcueclipse.debug.gdbjtag.jlink.gdbServerConnectionAddress" value=""/>
 <stringAttribute key="ilg.gnumcueclipse.debug.gdbjtag.jlink.gdbServerDebugInterface" value="swd"/>
 <stringAttribute key="ilg.gnumcueclipse.debug.gdbjtag.jlink.gdbServerDeviceEndianness" value="little"/>
-<stringAttribute key="ilg.gnumcueclipse.debug.gdbjtag.jlink.gdbServerDeviceName" value="CY8C6xx7_CM0p_sect256KB_tm"/>
+<stringAttribute key="ilg.gnumcueclipse.debug.gdbjtag.jlink.gdbServerDeviceName" value="CY8C6xxA_CM0p_sect256KB_tm"/>
 <stringAttribute key="ilg.gnumcueclipse.debug.gdbjtag.jlink.gdbServerDeviceSpeed" value="auto"/>
 <stringAttribute key="ilg.gnumcueclipse.debug.gdbjtag.jlink.gdbServerExecutable" value="${jlink_path}/${jlink_gdbserver}"/>
 <intAttribute key="ilg.gnumcueclipse.debug.gdbjtag.jlink.gdbServerGdbPortNumber" value="2331"/>
@@ -66,7 +66,7 @@
 <booleanAttribute key="org.eclipse.cdt.dsf.gdb.UPDATE_THREADLIST_ON_SUSPEND" value="false"/>
 <intAttribute key="org.eclipse.cdt.launch.ATTR_BUILD_BEFORE_LAUNCH_ATTR" value="2"/>
 <stringAttribute key="org.eclipse.cdt.launch.COREFILE_PATH" value=""/>
-<stringAttribute key="org.eclipse.cdt.launch.PROGRAM_NAME" value="${cy_prj_path}/build/CYW9P62S1-43438EVB-01/Debug/mtb_test_mfg.hex"/>
+<stringAttribute key="org.eclipse.cdt.launch.PROGRAM_NAME" value="${cy_prj_path}/build/CY8CKIT-062S2-43012/Debug/mtb_test_mfg.hex"/>
 <stringAttribute key="org.eclipse.cdt.launch.PROJECT_ATTR" value="mtb_test_mfg"/>
 <booleanAttribute key="org.eclipse.cdt.launch.PROJECT_BUILD_CONFIG_AUTO_ATTR" value="false"/>
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
