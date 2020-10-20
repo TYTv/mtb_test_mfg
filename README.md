@@ -24,8 +24,6 @@ guide
 
 4. quick panel -> launches -> generate launches for mtb_test_mfg
 
-5. open mfg_task.h file and define / non define SUPPORT_BT_TEST
+5. plug in usb
 
-6. plug in usb
-
-7. quick panel -> launches -> mtb_test_mfg program (kitprog3_miniprog4)
+6. quick panel -> launches -> mtb_test_mfg program (kitprog3_miniprog4)
