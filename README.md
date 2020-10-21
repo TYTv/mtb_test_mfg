@@ -24,7 +24,7 @@ guide
 
 4. quick panel -> launches -> generate launches for mtb_test_mfg
 
-5. file -> import -> projects from folder or archive -> next -> import source: your workspace forder path\mtb_shared -> finish
+5. file -> import -> general -> projects from folder or archive -> next -> import source: your workspace forder path\mtb_shared -> finish
 
 6. plug in usb
 
